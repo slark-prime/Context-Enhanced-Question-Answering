@@ -1,7 +1,7 @@
 
 # CAQA: Context-Enhanced Question Answering
 
-CAQA is a Python module that allows you to perform question answering on a directory of documents using different large language models (LLMs) and embeddings. It uses the langchain package to access various LLMs and embeddings from the Hugging Face Hub and OpenAI. It also uses the PyPDF2 and docx packages to read PDF and Word files, respectively.
+CAQA is a Python module that allows you to perform question answering on a directory of documents using different large language models (LLMs) and embeddings. It uses the langchain package to access various LLMs and embeddings from the Hugging Face Hub and OpenAI. 
 
 ## Installation
 
