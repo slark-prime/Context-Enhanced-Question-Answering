@@ -41,6 +41,7 @@ The output will be something like:
 J.K. Rowling
 ```
 
-## License
+## Results
+<img width="981" alt="image" src="https://github.com/slark-prime/Context-Enhanced-Question-Answering/assets/43880036/60649e61-31c6-4030-84e4-231ec066e34b">
+<img width="1138" alt="image" src="https://github.com/slark-prime/Context-Enhanced-Question-Answering/assets/43880036/d309292d-59e0-48ed-bdd9-c2872fbbb911">
 
-This project is licensed under the MIT License - see the LICENSE file for details.
