@@ -1,0 +1,186 @@
+{
+  "gpt3.5": {
+    "What is the main purpose of the United States Constitution?": {
+      "answer": "The main purpose of the United States Constitution is to establish the basic framework of government and to protect the rights and freedoms of its citizens.",
+      "rating": 9,
+      "justifications": ["The answer correctly identifies the main purpose of the Constitution, but it could have been slightly more specific about providing a structure for federal governance."]
+    },
+    "Who are considered the 'Framers' of the Constitution?": {
+      "answer": "The 'Framers' of the Constitution are the individuals who participated in the drafting and creation of the Constitution. They include prominent figures such as James Madison, Alexander Hamilton, Benjamin Franklin, and George Washington, among others.",
+      "rating": 10,
+      "justifications": ["The answer is accurate and provides specific examples of the Framers."]
+    },
+    "How many amendments have been made to the Constitution as of 2021?": {
+      "answer": "As of 2021, there have been 27 amendments made to the United States Constitution.",
+      "rating": 10,
+      "justifications": ["The answer is correct."]
+    },
+    "What are the three branches of government established by the Constitution, and what are their primary functions?": {
+      "answer": "The Constitution establishes three branches of government: the legislative branch, the executive branch, and the judicial branch. The primary function of the legislative branch is to make laws, the executive branch is responsible for enforcing laws, and the judicial branch interprets laws and ensures their constitutionality.",
+      "rating": 10,
+      "justifications": ["The answer correctly identifies the three branches and their primary functions."]
+    },
+    "What is the significance of the Bill of Rights?": {
+      "answer": "The Bill of Rights is a crucial component of the United States Constitution. It consists of the first ten amendments and guarantees certain fundamental rights and freedoms to the American people, such as freedom of speech, religion, and the right to a fair trial.",
+      "rating": 10,
+      "justifications": ["The answer correctly highlights the significance of the Bill of Rights and provides relevant examples of the rights it protects."]
+    },
+    "How can an amendment be added to the U.S. Constitution?": {
+      "answer": "To add an amendment to the U.S. Constitution, a proposed amendment must be approved by a two-thirds majority vote in both the Senate and the House of Representatives. It must then be ratified by three-fourths of the states, either through their legislatures or through state conventions.",
+      "rating": 10,
+      "justifications": ["The answer accurately describes the process of adding an amendment to the Constitution."]
+    },
+    "What is the Supremacy Clause and why is it important?": {
+      "answer": "The Supremacy Clause is a provision in the United States Constitution that establishes the federal government's authority over state governments. It states that the Constitution, federal laws, and treaties are the supreme law of the land. This clause is important because it ensures uniformity and consistency in the application of federal law throughout the country.",
+      "rating": 10,
+      "justifications": ["The answer correctly describes the Supremacy Clause and its importance."]
+    },
+    "Explain the concept of 'checks and balances' as outlined in the Constitution.": {
+      "answer": "The concept of 'checks and balances' refers to the system of powers and restraints established in the Constitution to prevent any one branch of government from becoming too powerful. Each branch has the ability to limit the actions of the other branches, thus creating a balance of power.",
+      "rating": 10,
+      "justifications": ["The answer accurately explains the concept of checks and balances as established in the Constitution."]
+    },
+    "What are some of the powers granted to Congress by the Constitution?": {
+      "answer": "The Constitution grants Congress several powers, including the power to make laws, levy taxes, declare war, regulate commerce, establish post offices, and maintain an army and navy, among others.",
+      "rating": 10,
+      "justifications": ["The answer correctly lists several powers granted to Congress by the Constitution."]
+    },
+    "What are some of the key protections offered by the First Amendment?": {
+      "answer": "The First Amendment of the United States Constitution protects several fundamental freedoms, including freedom of speech, freedom of religion, freedom of the press, the right to peaceably assemble, and the right to petition the government for redress of grievances.",
+      "rating": 10,
+      "justifications": ["The answer correctly identifies the key protections offered by the First Amendment."]
+    },
+    "What is the process for impeachment as outlined in the Constitution?": {
+      "answer": "The process for impeachment, as outlined in the Constitution, begins with the House of Representatives, which has the power to impeach or formally accuse a federal official. If the House approves articles of impeachment by a majority vote, the Senate then conducts a trial and can remove the official from office with a two-thirds majority vote.",
+      "rating": 10,
+      "justifications": ["The answer accurately describes the process of impeachment as outlined in the Constitution."]
+    },
+    "Why was the Constitution initially criticized for not having a declaration of individual rights?": {
+      "answer": "The Constitution was initially criticized for not including a specific declaration of individual rights, as some people feared that this omission could lead to a potential abuse of power by the federal government and infringement on the rights and liberties of individuals. This criticism led to the addition of the Bill of Rights.",
+      "rating": 10,
+      "justifications": ["The answer correctly explains why the Constitution was initially criticized for not having a declaration of individual rights."]
+    },
+    "How does the Constitution address the issue of state sovereignty?": {
+      "answer": "The Constitution addresses the issue of state sovereignty by establishing a federalist system in which power is divided between the federal and state governments. Furthermore, the Tenth Amendment reserves to the states all powers that are not delegated to the federal government by the Constitution, or prohibited by it to the States.",
+      "rating": 10,
+      "justifications": ["The answer correctly describes how the Constitution addresses the issue of state sovereignty."]
+    },
+    "What does the term 'enumerated powers' mean in the context of the Constitution?": {
+      "answer": "In the context of the Constitution, 'enumerated powers' refers to the powers that are explicitly granted to the federal government by the Constitution. These include the power to regulate commerce, coin money, establish post offices, declare war, and raise and support armies, among others.",
+      "rating": 10,
+      "justifications": ["The answer accurately defines the term 'enumerated powers' and provides relevant examples."]
+    },
+    "What is the Electoral College and how is it defined in the Constitution?": {
+      "answer": "The Electoral College is the mechanism by which the President and Vice President of the United States are elected. It is defined in Article II and the 12th Amendment of the Constitution. Each state has a number of electors equal to its total number of Senators and Representatives in Congress, and these electors cast votes to determine the President and Vice President.",
+      "rating": 10,
+      "justifications": ["The answer correctly explains the Electoral College and its definition in the Constitution."]
+    },
+    "Describe the concept of 'separation of powers' as established by the Constitution.": {
+      "answer": "The Constitution establishes the concept of 'separation of powers' by dividing governmental authority into three branches: the legislative, executive, and judicial branches. This division is intended to prevent any one branch from becoming too powerful by distributing governmental responsibilities among them.",
+      "rating": 10,
+      "justifications": ["The answer accurately describes the concept of 'separation of powers' as established by the Constitution."]
+    },
+    "What is the 14th Amendment and why is it significant?": {
+      "answer": "The 14th Amendment to the United States Constitution, ratified in 1868, is a significant amendment as it guarantees equal protection under the law and due process to all citizens. It was a key amendment during the Civil Rights movement and has been instrumental in several major Supreme Court decisions.",
+      "rating": 10,
+      "justifications": ["The answer correctly describes the 14th Amendment and its significance."]
+    },
+    "What is the purpose of the Preamble to the Constitution?": {
+      "answer": "The Preamble to the Constitution serves to introduce the Constitution, stating the objectives that the Constitution is designed to achieve, such as establishing justice, ensuring domestic tranquility, providing for the common defense, promoting the general welfare, and securing the blessings of liberty for current and future generations.",
+      "rating": 10,
+      "justifications": ["The answer correctly describes the purpose of the Preamble to the Constitution."]
+    },
+    "Who was the oldest and the youngest signer of the U.S. Constitution?": {
+      "answer": "The oldest signer of the U.S. Constitution was Benjamin Franklin, who was 81 at the time. The youngest was Jonathan Dayton, who was 26.",
+      "rating": 10,
+      "justifications": ["The answer correctly identifies the oldest and youngest signers of the U.S. Constitution."]
+    },
+    "What are the Federalist Papers and what role did they play in the ratification of the Constitution?": {
+      "answer": "The Federalist Papers are a collection of 85 essays written by Alexander Hamilton, James Madison, and John Jay under the pseudonym 'Publius'. They played a crucial role in the ratification of the Constitution by providing a detailed defense of the new Constitution and persuading the public of its benefits.",
+      "rating": 10,
+      "justifications": ["The answer correctly describes the Federalist Papers and their role in the ratification of the Constitution."]
+    }
+  },
+  "google/flan-t5-small": {
+    "What is the main purpose of the United States Constitution?": {
+    "answer": "to form a more perfect Union",
+    "rating": 2,
+    "justifications": ["The answer is incomplete. The main purpose of the United States Constitution is more than forming a more perfect Union. It also includes establishing justice, insuring domestic tranquility, providing for the common defense, promoting the general welfare, and securing the blessings of liberty to ourselves and our posterity."]
+    },
+    "Who are considered the 'Framers' of the Constitution?": {
+    "answer": "Senators and Representatives",
+    "rating": 1,
+    "justifications": ["This answer is incorrect. The 'Framers' of the Constitution were the delegates to the Constitutional Convention, not current Senators and Representatives. The answer should include figures like James Madison, Benjamin Franklin, George Washington, and others."]
+    },
+    "How many amendments have been made to the Constitution as of 2021?": {
+    "answer": "3",
+    "rating": 1,
+    "justifications": ["This answer is incorrect. There have been 27 amendments made to the Constitution as of 2021."]
+    },
+    "What are the three branches of government established by the Constitution, and what are their primary functions?": {
+    "answer": "a Constitution",
+    "rating": 1,
+    "justifications": ["This answer is not relevant to the question. The three branches established by the Constitution are the legislative, executive, and judicial branches."]
+    },
+    "What is the significance of the Bill of Rights?": {
+    "answer": "The first 10 amendments to the Constitution were ratified December 15, 1791, and form",
+    "rating": 2,
+    "justifications": ["This answer is incomplete. The Bill of Rights signifies the first ten amendments to the Constitution, which guarantee certain fundamental rights and freedoms to the American people, such as freedom of speech, religion, and the right to a fair trial."]
+    },
+    "How can an amendment be added to the U.S. Constitution?": {
+    "answer": "By the legisla- tures of the several States",
+    "rating": 4,
+    "justifications": ["This answer is partially correct, but incomplete. In addition to being ratified by the legislatures of three-fourths of the states, a proposed amendment must also be approved by a two-thirds majority vote in both the Senate and the House of Representatives."]
+    },
+    "What is the Supremacy Clause and why is it important?": {
+    "answer": "a).",
+    "rating": 1,
+    "justifications": ["This answer is not relevant to the question. The Supremacy Clause establishes the Constitution, federal laws, and treaties as the supreme law of the land, ensuring uniformity in the application of federal law throughout the country."]
+    },
+    "Explain the concept of 'checks and balances' as outlined in the Constitution.": {
+    "answer": "a).",
+    "rating": 1,
+    "justifications": ["This answer is not relevant to the question. The concept of 'checks and balances' refers to the system of powers and restraints established in the Constitution to prevent any one branch of government from becoming too powerful."]
+    },
+    "What are some of the powers granted to Congress by the Constitution?": {
+    "answer": "judicial Power of the United States",
+    "rating": 1,
+    "justifications": ["This answer is incorrect. The powers granted to Congress by the Constitution include the power to make laws, levy taxes, declare war, regulate commerce, establish post offices, and maintain an army and navy, among others. Judicial power is vested in the judicial branch, not Congress."]
+    },
+    "What are some of the key protections offered by the First Amendment?": {
+    "answer": "a warrant for a trial",
+    "rating": 1,
+    "justifications": ["This answer is incorrect. The First Amendment protects freedom of speech, freedom of religion, freedom of the press, the right to assemble, and the right to petition the government for redress of grievances."]
+    },
+    "What is the process for impeachment as outlined in the Constitution?": {
+    "answer": "Indictment",
+    "rating": 2,
+    "justifications": ["This answer is incomplete. The process for impeachment, as outlined in the Constitution, involves two steps: first, the House of Representatives must impeach a federal official by approving articles of impeachment; then, the Senate conducts a trial and requires a two-thirds majority vote for conviction and removal."]
+    },
+    "Why was the Constitution initially criticized for not having a declaration of individual rights?": {
+    "answer": "To prevent misconstruction or abuse of its powers",
+    "rating": 3,
+    "justifications": ["This answer is partially correct. The Constitution was initially criticized for not including a declaration of individual rights because there were concerns that without such explicit protections, the government could potentially infringe upon the rights of individuals."]
+    },
+    "How does the Constitution address the issue of state sovereignty?": {
+    "answer": "The Constitution of the United States NATIONAL CONSTITUTION CENTER We the People",
+    "rating": 1,
+    "justifications": ["This answer is not relevant to the question. The Constitution addresses the issue of state sovereignty by establishing a federal system of government in which power is divided between the federal government and the states. It grants certain powers to the federal government while reserving others to the states."]
+    },
+    "What does the term 'enumerated powers' mean in the context of the Constitution?": {
+    "answer": "a judicial Power",
+    "rating": 1,
+    "justifications": ["This answer is incorrect. 'Enumerated powers' refers to the specific powers that the Constitution explicitly grants to the federal government, such as the power to levy taxes, regulate interstate commerce, coin money, declare war, etc."]
+    },
+    "What is the Electoral College and how is it defined in the Constitution?": {
+    "answer": "The Executive Power shall be vested in a President of the United States of America.",
+    "rating": 2,
+    "justifications": ["This answer is partially relevant but does not address the Electoral College. The Electoral College is a body of electors chosen by the people who formally elect the President and Vice President. The Constitution outlines this process in Article II and the 12th Amendment."]
+    },
+    "Describe the concept of 'separation of powers' as established by the Constitution.": {
+    "answer": "I.",
+    "rating": 1,
+    "justifications": ["This answer is not relevant to the question. 'Separation of powers' refers to the division of power among three branches: the legislative, executive, and judicial branches. Each branch has its own responsibilities and powers, and this system is designed to prevent any one branch from becoming too powerful."]
+    }
+  }
+}
