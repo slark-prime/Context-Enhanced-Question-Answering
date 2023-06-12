@@ -1,47 +1,73 @@
+# Context-Augmented Question Answering (CAQA) System
 
-# CAQA: Context-Enhanced Question Answering
+This repository contains a Context-Augmented Question Answering (CAQA) system. The goal of this project is to build a system that can provide detailed responses to user queries based on the specific context documents provided. This system is highly effective for use cases where responses to queries are context-dependent, such as legal, medical, and technical domains.
 
-CAQA is a Python module that allows you to perform question answering on a directory of documents using different large language models (LLMs) and embeddings. It uses the langchain package to access various LLMs and embeddings from the Hugging Face Hub and OpenAI. 
+## Overview
 
-## Installation
+The system has two main modules:
 
-To install CAQA, you need to have Python 3.8 or higher and pip installed on your system. You also need to install the dependencies in requirements.txt
+- **Ingest module**: This module loads the documents, splits them into chunks, creates embeddings using the specified model, and persists them to a Chroma database. 
 
+- **CAQA module**: This module retrieves the context from the Chroma database, uses a large language model (LLM) to generate answers based on the retrieved context, and returns the generated response.
 
-## Usage
+## System Flow
 
-To use CAQA, you need to create an instance of the CAQA class by passing the following arguments:
+1. **Ingest Documents**: This stage loads documents from a given directory. It supports `.txt`, `.pdf`, and `.csv` files. Each document is divided into chunks of text.
 
-- `directoryPath`: The path to the directory that contains the documents that you want to use as the context for question answering. The documents can be in PDF, Word, or text format.
-- `llmRepoId`: The repository ID of the LLM that you want to use for question answering. It can be one of `"openai"`, `"google/flan-t5-small"`, `"mosaicml/mpt-7b"`, or `"gpt2"`. The default value is `"openai"`.
-- `embeddingModel`: The name of the embedding model that you want to use for similarity search. It can be one of `"openai"`, `"paraphrase-MiniLM-L6-v2"`, or any other model name supported by the HuggingFaceEmbeddings class. The default value is `"openai"`.
+2. **Embedding**: The chunks are transformed into embeddings using HuggingFaceInstructEmbeddings. The embedded documents are persisted in a Chroma database for future retrieval.
 
-For example:
+3. **Context Retrieval**: During the query process, the system retrieves the relevant context for a given query from the Chroma database.
+
+4. **Question Answering**: With the relevant context at hand, the system generates a response to the query using a Large Language Model (LLM).
+
+## Code Usage
+
+The code consists of three main parts:
+
+- `ingest.py` is used to load the documents, split them into chunks, create the embeddings and persist them into a Chroma database.
+
+- `CAQA.py` is the main system module. It retrieves the context from the Chroma database and uses a large language model (LLM) to generate the answers.
+
+- `main.py` is an example script to interact with the system. It sets up the system, sends a list of queries, gets the responses, and saves the answers to a JSON file.
+
+To interact with the system:
 
 ```python
 from CAQA import CAQA
-myCAQA = CAQA(directoryPath="data", llmRepoId="google/flan-t5-small", embeddingModel="paraphrase-MiniLM-L6-v2")
+from dotenv import load_dotenv
+
+# Specify the path of your context documents
+contextPath = "context_files/"
+# List your queries
+queries = ["What are the Federalist Papers?"]
+
+# Initialize the system
+myCAQA = CAQA(contextPath, llmRepoId="openai", embeddingModel="hkunlp/instructor-xl")
+
+# Send queries and get responses
+for query in queries:
+    answer, sourceDocs = myCAQA.generateResponse(query)
+    print("Question: " + query)
+    print("Answer: " + answer + '\n')
+
+# Delete the instance after usage
+del myCAQA
 ```
 
-To generate a response for a given query, you need to call the `generateResponse` method of the CAQA instance by passing the following arguments:
+## Dependencies
 
-- `query`: The question that you want to ask.
-- `chainType`: The type of question answering chain that you want to use. It can be one of `"stuff"`, `"map_reduce"`, `"map_rerank"`, or `"refine"`. The default value is `"stuff"`.
-
-For example:
-
-```python
-response = myCAQA.generateResponse(query="Who is the author of Harry Potter?", chainType="map_reduce")
-print(response)
-```
-
-The output will be something like:
+Make sure to install the dependencies in your Python environment:
 
 ```
-J.K. Rowling
+pip install -r requirements.txt
 ```
 
-## Results
-<img width="981" alt="image" src="https://github.com/slark-prime/Context-Enhanced-Question-Answering/assets/43880036/60649e61-31c6-4030-84e4-231ec066e34b">
-<img width="1138" alt="image" src="https://github.com/slark-prime/Context-Enhanced-Question-Answering/assets/43880036/d309292d-59e0-48ed-bdd9-c2872fbbb911">
+This system has been tested on Python 3.7+. 
 
+## Contribution
+
+Feel free to contribute to the project. Please make sure to read the contribution guidelines before making a pull request.
+
+## License
+
+This project is licensed under the terms of the MIT license.
