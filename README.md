@@ -28,30 +28,71 @@ The code consists of three main parts:
 
 - `CAQA.py` is the main system module. It retrieves the context from the Chroma database and uses a large language model (LLM) to generate the answers.
 
-- `main.py` is an example script to interact with the system. It sets up the system, sends a list of queries, gets the responses, and saves the answers to a JSON file.
-
-To interact with the system:
+To use the CAQA system, you need to import the necessary modules and load the environment variables.
 
 ```python
-from CAQA import CAQA
+from CAQA import *
 from dotenv import load_dotenv
 
-# Specify the path of your context documents
-contextPath = "context_files/"
-# List your queries
-queries = ["What are the Federalist Papers?"]
+load_dotenv()
+```
 
-# Initialize the system
-myCAQA = CAQA(contextPath, llmRepoId="openai", embeddingModel="hkunlp/instructor-xl")
+You can define your queries as a list of strings:
 
-# Send queries and get responses
+```python
+queries = [
+    "What is the total amount of loans funded by Fannie Mae since 2009?",
+    "What percentage of Fannie Mae's single-family guaranty book comprises loans acquired since 2009?",
+    "What was the percentage of delinquent or foreclosed single-family loans in Fannie Mae's book as of December 31, 2013?",
+    "What is the status of the COVID-19 pandemic as of June 2023?",
+    "What new technologies have been introduced in 2023?"
+]
+```
+
+Choose your preferred large language model and embedding model from the available options:
+
+```python
+llm_list = ["google/flan-t5-xxl", "tiiuae/falcon-7b-instruct", "mosaicml/mpt-7b","bigscience/bloom-560m"]
+embedding_model_list = ["hkunlp/instructor-xl"]
+```
+
+Instantiate the CAQABuilder and customize it according to your preference:
+
+```python
+caqa_builder = CAQABuilder()
+customized_builder = caqa_builder.set_llm(llm_list[0])\
+                    .set_embedding_model(embedding_model_list[0])\
+                    .set_llm_params(temperature = 0.3, max_new_tokens = 500)
+```
+
+You can now build your CAQA system and start querying:
+
+```python
+myCAQA = customized_builder.build()
+print("Embedding model used: " + myCAQA.embedding_model)
+print("Large Language Model used: " + myCAQA.llm_repo_id)
+
 for query in queries:
-    answer, sourceDocs = myCAQA.generateResponse(query)
+    answer, source_docs = myCAQA.generate_response(query)
     print("Question: " + query)
     print("Answer: " + answer + '\n')
+    print(source_docs)
+    print("*****************")
+```
 
-# Delete the instance after usage
-del myCAQA
+You can also use the built-in command line interface for querying in real time:
+
+```python
+while True:
+    query = input("\nEnter a query: ")
+
+    if query == "exit":
+        break
+
+    # Get the answer from the chain
+    answer, source_docs = myCAQA.generate_response(query)
+    print("Answer: " + answer + '\n')
+    print(source_docs)
 ```
 
 ## Dependencies
@@ -62,7 +103,6 @@ Make sure to install the dependencies in your Python environment:
 pip install -r requirements.txt
 ```
 
-This system has been tested on Python 3.7+. 
 
 ## Contribution
 
