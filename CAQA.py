@@ -74,7 +74,7 @@ class CAQABuilder:
                 tokenizer = transformers.AutoTokenizer.from_pretrained(model_name)
                 self.caqa.llm = HuggingFacePipeline(
                     pipeline=pipeline(
-                        "text-generation", model=model, tokenizer=tokenizer
+                        "text-generation", model=model, tokenizer=tokenizer, model_kwargs=self.caqa.llm_kwargs
                     )
                 )
             else:
