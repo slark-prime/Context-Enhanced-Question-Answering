@@ -11,7 +11,7 @@ def extract_blocks_from_documents(docs: List[Document], docs_num: int, block_siz
 
     selected_docs = random.sample(docs, docs_num)
     blocks = []
-    with open("Eval/eval_blocks.json", 'w') as f:
+    with open("Eval/eval_blocks.jsonl", 'w') as f:
         # get text chunks
         for doc in selected_docs:
             content_length = len(doc.page_content)
