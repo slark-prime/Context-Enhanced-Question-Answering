@@ -73,7 +73,7 @@ class CAQABuilder:
                 model = transformers.AutoModelForCausalLM.from_pretrained(model_name)
                 tokenizer = transformers.AutoTokenizer.from_pretrained(model_name)
                 self.caqa.llm = HuggingFacePipeline(
-                    pipeline(
+                    pipeline=pipeline(
                         "text-generation", model=model, tokenizer=tokenizer
                     )
                 )

@@ -3,7 +3,7 @@ import json
 from dotenv import load_dotenv
 
 # load queries from json line file
-with open("question_block.jsonl", 'r') as f:
+with open("Eval/question_block.jsonl", 'r') as f:
     queries = [
         json.loads(line)["question"] for line in f
     ]
@@ -52,7 +52,7 @@ while True:
     if query == "cont":
         break
 
-file_name = "answers_" + myCAQA.llm_repo_id.split('/')[-1] + "_" + myCAQA.embedding_model.split('/')[-1] + ".jsonl"
+file_name = "Eval/answers_" + myCAQA.llm_repo_id.split('/')[-1] + "_" + myCAQA.embedding_model.split('/')[-1] + ".jsonl"
 # Write to answers to json line file
 with open(file_name, 'w') as f:
     for i, answer in enumerate(answers, start=1):
