@@ -1,8 +1,18 @@
 from CAQA import *
 import json
 from dotenv import load_dotenv
+import argparse
 
+
+# Create the parser
+parser = argparse.ArgumentParser(description='Process some integers.')
+
+# Add the arguments
+parser.add_argument('--model', type=str, required=True, help='The model to use')
+parser.add_argument('--temperature', type=float, required=True, help='The temperature to use')
+parser.add_argument('--max-new-tokens', type=int, required=True, help='The maximum number of new tokens')
 # load queries from json line file
+
 with open("Eval/question_block.jsonl", 'r') as f:
     queries = [
         json.loads(line)["question"] for line in f
@@ -25,9 +35,19 @@ embedding_model = "hkunlp/instructor-xl"
 caqa_builder = CAQABuilder()
 
 # customized builder
-customized_builder = caqa_builder.set_llm(llm[1])\
+
+
+# Parse the arguments
+args = parser.parse_args()
+
+# Use the arguments
+model = args.model
+temperature = args.temperature
+max_new_tokens = args.max_new_tokens
+
+customized_builder = caqa_builder.set_llm(model)\
                     .set_embedding_model(embedding_model)\
-                    .set_llm_params(temperature = 0.5, max_new_tokens = 250)\
+                    .set_llm_params(temperature=temperature, max_new_tokens=max_new_tokens)\
                     .set_chain_type("stuff")
 
 # build the system based on customized builder
