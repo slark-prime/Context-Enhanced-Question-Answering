@@ -15,7 +15,7 @@ class CAQA:
         self.llm_repo_id = "openai"
         self.embedding_model = "hkunlp/instructor-xl"
         self.llm = None
-        self.llm_kwargs = {"temperature": 0.1, "max_new_tokens": 500}
+        self.llm_kwargs = {"temperature": 0.1, "max_new_tokens": 500, "repetition_penalty": 1.2, "device":"cuda:0"}
 
     def generate_response(self, query):
         """
@@ -32,6 +32,8 @@ class CAQA:
                 print(cb)
 
         return answer, source_docs
+    
+   
 
 
 class CAQABuilder:
@@ -69,19 +71,15 @@ class CAQABuilder:
             self.caqa.llm = OpenAI()
 
         elif self.task in ['text2text-generation', 'text-generation']:
-            if model_name in ["mosaicml/mpt-7b-instruct", "lmsys/vicuna-7b-v1.3"]:
-                model = transformers.AutoModelForCausalLM.from_pretrained(model_name)
-                tokenizer = transformers.AutoTokenizer.from_pretrained(model_name)
-                self.caqa.llm = HuggingFacePipeline(
-                    pipeline=pipeline(
-                        "text-generation", model=model, tokenizer=tokenizer, model_kwargs=self.caqa.llm_kwargs
-                    )
+        
+            model = transformers.AutoModelForCausalLM.from_pretrained(model_name, trust_remote_code=True)
+            tokenizer = transformers.AutoTokenizer.from_pretrained(model_name)
+            self.caqa.llm = HuggingFacePipeline(
+                pipeline=pipeline(
+                    "text-generation", model=model, tokenizer=tokenizer, **self.caqa.llm_kwargs
                 )
-            else:
-                self.caqa.llm = HuggingFaceHub(repo_id=self.caqa.llm_repo_id,
-                                               model_kwargs=self.caqa.llm_kwargs)
-
-
+            )
+       # else: self.caqa.llm = HuggingFaceHub(repo_id=self.caqa.llm_repo_id,model_kwargs=self.caqa.llm_kwargs)
         elif self.task == "question-answering":
             model_name = self.caqa.llm_repo_id
             model = AutoModelForQuestionAnswering.from_pretrained(model_name)
@@ -99,16 +97,32 @@ class CAQABuilder:
 
         # load the vectorstore
         db = Chroma(persist_directory=PERSIST_DIRECTORY, embedding_function=embeddings, client_settings=CHROMA_SETTINGS)
-        retriever = db.as_retriever(max_items=10)
+        retriever = db.as_retriever()
 
         # LLM
         self.load_modal()
 
+        chain_type_kwargs = {"prompt":CAQABuilder.build_prompt_template()}
         self.caqa.qa_chain = RetrievalQA.from_chain_type(llm=self.caqa.llm,
                                                          chain_type=self.chain_type,
                                                          retriever=retriever,
+                                                         chain_type_kwargs=chain_type_kwargs,
                                                          return_source_documents=True)
 
     def build(self):
         self.build_qa_chain()
         return self.caqa
+
+    @staticmethod
+    def build_prompt_template():
+        from langchain.prompts import PromptTemplate
+        prompt_template = """Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer.
+
+        {context}
+
+        Question: {question}
+        Answer:"""
+        PROMPT = PromptTemplate(
+            template=prompt_template, input_variables=["context", "question"]
+        )
+        return PROMPT
