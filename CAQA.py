@@ -16,7 +16,7 @@ from transformers import (
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
-FROM_HUB = True
+FROM_HUB = False
 
 
 class CAQA:
@@ -114,8 +114,9 @@ class CAQABuilder:
                                                              torch_dtype=torch.float16,
                                                              low_cpu_mem_usage=True,
                                                              trust_remote_code=True,
-                                                             max_memory={0: "15GB"} # change according to RAM available
+                                                             max_memory={0: "7GB"} # change according to RAM available
                                                              )
+                model.tie_weights()
 
                 logging.info("Loading Tokenizer")
                 tokenizer = AutoTokenizer.from_pretrained(model_name)
@@ -173,3 +174,4 @@ class CAQABuilder:
             template=prompt_template, input_variables=["context", "question"]
         )
         return PROMPT
+
