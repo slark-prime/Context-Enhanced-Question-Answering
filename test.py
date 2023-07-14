@@ -70,7 +70,7 @@ while True:
     if query == "cont":
         break
 
-file_name = "Eval/answers_" + myCAQA.llm_repo_id.split('/')[-1] + "_" + myCAQA.embedding_model.split('/')[-1] + ".jsonl"
+file_name = "Eval/answers_" + myCAQA.llm_repo_id.split('/')[-1] + "_" + myCAQA.embedding_model.split('/')[-1] + temperature + ".jsonl"
 # Write to answers to json line file
 with open(file_name, 'w') as f:
     for i, answer in enumerate(answers, start=1):
@@ -78,7 +78,8 @@ with open(file_name, 'w') as f:
             "question_id": i,
             "answer": answer,
             "LLM": myCAQA.llm_repo_id,
-            "embedding_model": myCAQA.embedding_model
+            "embedding_model": myCAQA.embedding_model,
+            "temperature": temperature
         }
         f.write(json.dumps(line) + "\n")
 
