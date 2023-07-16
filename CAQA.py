@@ -163,13 +163,16 @@ class CAQABuilder:
     @staticmethod
     def build_prompt_template():
         from langchain.prompts import PromptTemplate
-        prompt_template = """Use the following pieces of context to answer the question at the end. If you don't know 
-        the answer, just say that you don't know, don't try to make up an answer. 
-
-        {context}
-
-        Question: {question}
-        Answer:"""
+        prompt_template = """Use the following pieces of context to answer the question at the end. It is essential 
+        that your answer is based solely on the provided context. Refrain from using any pre-trained knowledge or 
+        guessing the answer. If the question can't be answered based on the given context,  just say that you don't 
+        know, don't try to make up an answer. 
+            
+            {context}
+            
+            Question: {question}
+            Answer:
+        """
         PROMPT = PromptTemplate(
             template=prompt_template, input_variables=["context", "question"]
         )
