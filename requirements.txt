@@ -1,9 +1,9 @@
 langchain
-chromadb
+chromadb==0.3.22
 llama-cpp-python
 urllib3
 InstructorEmbedding
-sentence-transformers
+sentence-transformers==2.2.2
 faiss-cpu
 huggingface_hub
 transformers
@@ -14,3 +14,6 @@ python-dotenv~=1.0.0
 tqdm~=4.65.0
 torch~=2.0.1
 einops
+xformers
+peft
+pyperclip

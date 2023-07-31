@@ -17,8 +17,8 @@ def main():
     documents = dir_loader.load()
 
     if EVAL:
-        from Eval.extract_blocks import extract_blocks_from_documents
-        extract_blocks_from_documents(documents, 30)
+        from Eval.DataExtractor import DataExtractor
+        DataExtractor().extract_to_jsonl_file(documents, need_list=False)
 
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
 
