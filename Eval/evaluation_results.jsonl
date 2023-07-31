@@ -1,4 +1,0 @@
-{"block_id": 1, "question_id": 1, "score": 10, "justification": "The response matches the context accurately.", "llm": "google/flan-t5-xxl"}
-{"block_id": 1, "question_id": 2, "score": 8, "justification": "The answer is correct but lacks mention of credit ratings.", "llm": "google/flan-t5-xxl"}
-{"block_id": 1, "question_id": 3, "score": 10, "justification": "The answer directly and accurately reflects the context.", "llm": "google/flan-t5-xxl"}
-{"block_id": 1, "question_id": 4, "score": 0, "justification": "The provided answer is incorrect according to the context.", "llm": "google/flan-t5-xxl"}
